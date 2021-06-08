@@ -5,7 +5,8 @@ cargo build --target=x86_64-pc-windows-gnu --release
 
 if [ -d package ]
 then
-	rm -rf package
+	echo "'package' directory already exists. Aborting." 1>&2
+    exit 1
 fi
 
 mkdir -p package
